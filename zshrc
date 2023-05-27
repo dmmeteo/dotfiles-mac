@@ -7,8 +7,6 @@ echo "Hello from .zshrc"
 brew outdated
 
 # ----- Set Variables -----
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 . "$HOME/.cargo/env"
 
 export NVM_DIR="$HOME/.nvm"
@@ -26,8 +24,19 @@ eval "$(pyenv init -)"
 alias ls='ls -lAFh'
 
 # ----- Customize Prompt(s) -----
+# https://medium.com/pareture/simplest-zsh-prompt-configs-for-git-branch-name-3d01602a6f33
+# https://arjanvandergaag.nl/blog/customize-zsh-prompt-with-vcs-info.html
+# Enabling and setting git info var to be used in prompt config.
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+# This line obtains information from the vcs.
+zstyle ':vcs_info:git*' formats "%s:(%b)"
+precmd() {vcs_info}
+# Enable substitution in the prompt.
+setopt prompt_subst
+# Set the prompt.
 PROMPT='
-%~
+%~  ${vcs_info_msg_0_}
 %n@%m %L %# '
 RPROMPT='%*'
 
@@ -39,3 +48,13 @@ function mkcd() {
 }
 
 # ----- Use ZSH Plugins -----
+
+
+# ----- Work(should be moved) -----
+export LDFLAGS="-I/opt/homebrew/opt/openssl@1.1/include $LDFLAGS"
+export LDFLAGS="-I/opt/homebrew/opt/openssl@1.1/lib $LDFLAGS"
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+
+
+# Created by `pipx` on 2022-12-13 14:51:52
+export PATH="$PATH:/Users/me/.local/bin"

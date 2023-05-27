@@ -1,0 +1,41 @@
+[user]
+	name = Dmitry Sichkar
+	email = 20076745+dmmeteo@users.noreply.github.com
+
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+	quotepath = off
+	autocrlf = false
+	safecrlf = false
+
+[diff]
+	tool = vim -d
+
+[alias]
+	st = status -sbu
+	fa = fetch --all
+	del = branch -D
+	ll = log --oneline
+	last = log -1 HEAD --stat
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	co = checkout
+	ci = commit
+	cm = commit -m
+	ac = !git add -A && git commit -m
+	type = cat-file -t
+	dump = cat-file -p
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	ignore = "!gi() { curl -sL https://www.gitignore.io/api/vim,osx,emacs,linux,macos,windows,pycharm,virtualenv,sublimetext,visualstudiocode,$@ ;}; gi"
+
+[color]
+	ui = true
+	branch = true
+	diff = true
+	interactive = true
+	status = true
+
+[push]
+	default = matching
+[help]
+	autocorrect = 20
