@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 #!/usr/bin/env zsh
 
 # This sets the environment for interactive shells.
@@ -58,3 +60,6 @@ export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 
 # Created by `pipx` on 2022-12-13 14:51:52
 export PATH="$PATH:/Users/me/.local/bin"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
