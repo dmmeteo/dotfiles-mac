@@ -10,12 +10,12 @@
     ~/.zshenv:
     ~/.zshrc:
     ~/.gitconfig:
-    ~/Brewfile:
+    ~/.Brewfile:
 
 - create:
-    - ~/Workspace
+    - ~/Documents/Workspace
 
 - shell:
     # - [git submodule update --init --recursive, Installing submodules]
     - echo "hey you guys"
-    - brew upgrade
+    - brew bundle install --global

@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 #!/usr/bin/env zsh
 
 # This sets the environment for interactive shells.
@@ -20,10 +18,23 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+export PATH="/opt/homebrew/bin:$PATH"
+
+# Created by `pipx` on 2022-12-13 14:51:52
+export PATH="$PATH:/Users/me/.local/bin"
+
+if [ -f "/Users/me/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/me/.config/fabric/fabric-bootstrap.inc"; fi
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+eval "$(zoxide init --cmd cd zsh)"
+
+source <(fzf --zsh)
+
 # ----- Change ZSH Options -----
 
 # ----- Create Aliases -----
-alias ls='ls -lAFh'
+alias ls='eza -lah --git --icons'
 
 # ----- Customize Prompt(s) -----
 # https://medium.com/pareture/simplest-zsh-prompt-configs-for-git-branch-name-3d01602a6f33
@@ -50,16 +61,3 @@ function mkcd() {
 }
 
 # ----- Use ZSH Plugins -----
-
-
-# ----- Work(should be moved) -----
-export LDFLAGS="-I/opt/homebrew/opt/openssl@1.1/include $LDFLAGS"
-export LDFLAGS="-I/opt/homebrew/opt/openssl@1.1/lib $LDFLAGS"
-export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
-
-
-# Created by `pipx` on 2022-12-13 14:51:52
-export PATH="$PATH:/Users/me/.local/bin"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

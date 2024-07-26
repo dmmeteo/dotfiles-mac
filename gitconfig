@@ -39,3 +39,6 @@
 	default = matching
 [help]
 	autocorrect = 20
+[maintenance]
+	repo = /Users/me/Documents/Workspace/new-horizon
+	repo = /Users/me/Documents/Workspace/relay
