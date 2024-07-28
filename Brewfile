@@ -18,14 +18,16 @@ brew "awscli"
 brew "bat"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
-# Modern replacement for 'ls'
-brew "exa"
+# Modern, maintained replacement for ls
+brew "eza"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU compiler collection
@@ -50,8 +52,6 @@ brew "gdal"
 brew "gh"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Next generation open source RPC library and framework
-brew "grpc@1.54"
 # Improved top (interactive process viewer)
 brew "htop"
 # Client library for huggingface.co hub
@@ -72,8 +72,6 @@ brew "neofetch"
 brew "neovim"
 # Manage multiple Node.js versions
 brew "nvm"
-# Tool for creating isolated virtual python environments
-brew "virtualenv"
 # Python dependency management tool
 brew "pipenv"
 # Execute binaries from Python packages in isolated environments
@@ -89,35 +87,48 @@ brew "python@3.9"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Rust toolchain installer
-brew "rustup-init"
+brew "rustup"
 # Non-interactive SSH password auth
 brew "sshpass"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Tool for creating isolated virtual python environments
+brew "virtualenv"
 # JavaScript package manager
 brew "yarn"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # AI-powered productivity tool for the command-line
 cask "amazon-q"
 # Chromium based browser
 cask "arc"
 # Installer for BetterDiscord
 cask "betterdiscord-installer"
+# Opensource IDE for exploring and testing api's
+cask "bruno"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerised applications and microservices
 cask "docker"
+cask "font-jetbrains-mono-nerd-font"
 # Web browser
 cask "google-chrome"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "google-cloud-sdk"
 # Desktop automation application
 cask "hammerspoon"
+# Shows the next meeting in the menu bar
+cask "meetingbar"
 # Calculator and converter application
 cask "numi"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Imaging utility to install operating systems to a microSD card
+cask "raspberry-pi-imager"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
@@ -130,18 +141,22 @@ cask "transmission"
 cask "visual-studio-code"
 # Rust-based terminal
 cask "warp"
+# Terminal emulator
+cask "wave"
 # Multiplayer code editor
 cask "zed"
 mas "Amphetamine", id: 937984704
+mas "Canva", id: 897446215
 mas "GarageBand", id: 682658836
-mas "Hidden Bar", id: 1452453066
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
+mas "Twingate", id: 1501592214
 mas "WireGuard", id: 1451685025
+mas "‎WhatsApp", id: 310633997
 vscode "alefragnani.project-manager"
 vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "be5invis.toml"
@@ -149,10 +164,12 @@ vscode "dbaeumer.vscode-eslint"
 vscode "eamodio.gitlens"
 vscode "editorconfig.editorconfig"
 vscode "esbenp.prettier-vscode"
+vscode "fill-labs.dependi"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "github.github-vscode-theme"
 vscode "gitpod.gitpod-desktop"
+vscode "golang.go"
 vscode "gruntfuggly.todo-tree"
 vscode "hashicorp.terraform"
 vscode "juanblanco.solidity"

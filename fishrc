@@ -1,0 +1,38 @@
+#!/usr/bin/env fish
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    # Welcome message
+    echo "Hello from config.fish"
+
+    # Check for outdated brew packages
+    brew outdated
+    # omf update
+
+    # ----- Set Variables -----
+    # Node Version Manager (NVM)
+    # omf install nvm
+
+    # Python Environment (pyenv)
+    # omf install pyenv
+
+    # Homebrew
+    # omf install brew
+
+    # Pipx
+    # set -gx PATH $PATH /Users/me/.local/bin
+
+    # Fabric config
+    # test -f /Users/me/.config/fabric/fabric-bootstrap.inc; and source /Users/me/.config/fabric/fabric-bootstrap.inc
+
+    # Zoxide
+    zoxide init fish | source
+
+    # FZF
+    fzf --fish | source
+
+    # Starship prompt
+    starship init fish | source
+
+    # ----- Create Aliases -----
+    alias ls 'eza -lah --git --icons'
+end

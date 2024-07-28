@@ -5,17 +5,23 @@
 - clean: ['~']
 
 - link:
-#     ~/.tmux.conf: tmux.conf
-#     ~/.vim: vim
+    ~/.Brewfile:
     ~/.zshenv:
     ~/.zshrc:
     ~/.gitconfig:
-    ~/.Brewfile:
+    ~/.config/starship.toml:
+        path: starship.toml
+        create: true
+        relink: true
+    ~/.config/fish/config.fish:
+        path: fishrc
+        create: true
+        relink: true
 
 - create:
     - ~/Documents/Workspace
 
 - shell:
     # - [git submodule update --init --recursive, Installing submodules]
-    - echo "hey you guys"
     - brew bundle install --global
+    # - curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish

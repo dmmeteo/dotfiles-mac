@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 #!/usr/bin/env zsh
 
 # This sets the environment for interactive shells.
@@ -31,27 +33,12 @@ eval "$(zoxide init --cmd cd zsh)"
 
 source <(fzf --zsh)
 
+eval "$(starship init zsh)"
+
 # ----- Change ZSH Options -----
 
 # ----- Create Aliases -----
 alias ls='eza -lah --git --icons'
-
-# ----- Customize Prompt(s) -----
-# https://medium.com/pareture/simplest-zsh-prompt-configs-for-git-branch-name-3d01602a6f33
-# https://arjanvandergaag.nl/blog/customize-zsh-prompt-with-vcs-info.html
-# Enabling and setting git info var to be used in prompt config.
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-# This line obtains information from the vcs.
-zstyle ':vcs_info:git*' formats "%s:(%b)"
-precmd() {vcs_info}
-# Enable substitution in the prompt.
-setopt prompt_subst
-# Set the prompt.
-PROMPT='
-%~  ${vcs_info_msg_0_}
-%n@%m %L %# '
-RPROMPT='%*'
 
 # ----- Add Locations to $PATH Variable -----
 
@@ -61,3 +48,6 @@ function mkcd() {
 }
 
 # ----- Use ZSH Plugins -----
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
